@@ -1,3 +1,4 @@
-readabilipy @ git+https://github.com/alan-turing-institute/ReadabiliPy@d58d742ef3da43d90a0029d5dc1aa965dac6ca63
-requests
-
+beautifulsoup4==4.12.*
+readability-lxml==0.8.*
+requests==2.28.*
+TTS==0.13.*
