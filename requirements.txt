@@ -1,3 +1,3 @@
-readabilipy
+readabilipy @ git+https://github.com/alan-turing-institute/ReadabiliPy@d58d742ef3da43d90a0029d5dc1aa965dac6ca63
 requests
 
