@@ -1,19 +1,16 @@
+from TTS.api import TTS
 from pathlib import Path
 
-import subprocess
-
-next_file = '0000_3.19_t.txt'
+next_file = "0000_3.20_t.txt"
 
 print(next_file)
 
 output_file = Path(next_file).name + ".wav"
 
+model_name = "tts_models/en/ek1/tacotron2"
+tts = TTS(model_name)
+
 with open(next_file) as f:
-  r = subprocess.run(
-    [
-      'pico2wave', '-l', '"en-US"', '-w', output_file, f'"{f.read()}"'
-    ]
-  )
-  r.check_returncode()
+  tts.tts_to_file(f.read(), speaker=None, file_path=output_file)
 
 # Text to speech to a file

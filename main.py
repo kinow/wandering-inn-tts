@@ -6,14 +6,15 @@ from bs4 import BeautifulSoup
 from readability import Document
 
 # Where did I stop, before flying over to Paris
-# (need something to listen to).
+# (need something to listen to)?
 
-next_link = 'https://wanderinginn.com/2017/09/30/3-19-t/'
+next_link = 'https://wanderinginn.com/2017/10/03/3-20-t/'
 
-order = 37
+order = 0
 
 # Trying to be polite with the server.
-WAIT_TIME = 2
+WAIT_TIME = 10
+max_stories = 2
 
 while next_link:
   print(f'Next = [{next_link}]')
@@ -50,5 +51,8 @@ while next_link:
     f.write(article)
 
   order = order + 1
+  max_stories = max_stories - 1
+  if max_stories == 0:
+    break
 
   sleep(WAIT_TIME)
